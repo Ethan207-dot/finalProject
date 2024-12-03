@@ -1,5 +1,6 @@
 from colors import *
 from diceRoller import *
+from testingFile import *
 world = {
     "name" : "Player",
     "loc" : "library",
@@ -18,25 +19,28 @@ while True:
         break
     if world["accuracy"] == 0:
         world["name"] = input("What would you like your name to be? \n")
-        world["accuracy"] = dndRoll("3d6")
-        world["dexterity"] = dndRoll("3d6")
+        world["accuracy"] = accuracy("4d6")
+        world["dexterity"] = dexterity("4d6")
     if world["loc"] == "library":
-        fD = input("You wake up from your boring library job\n\nEverything is dusty and there are only three bookshelves\nYou notice 2 doors 1 to your left and right\n\nWhich door would you like to go through\n")
+        fD = input("You are in the Library that you work at\n\nEverything is dusty and there are only three bookshelves\nYou notice 2 doors 1 to your left and right\n\nWhich door would you like to go through\n")
         fD = fD.lower().strip()
         if fD == "left":
             world["loc"] = "graveyard"
             print("You see a rumbling from the ground")
             if "B.F.G" in world["inv"]:
-                pass
-            continue
-        if fD == "right":
-            world["loc"] = "Closet"
+                print("You shoot the ground until it is no longer recognisbale as a Graveyard")
+                print(f"Congratulations you have stopped the zombie apocalypse. {green} You Win {reset}")
             if "B.F.G" not in world["inv"]:
-                print("You enter the janitor's closet and find a gun labeled the B.F.G\nYou pick it up")
-                world["inv"].append("B.F.G")
-            else:
-                print("It's just a Janitor's Closet")
-            continue
+                print("Zombies rise from the ground as you realise you forgot that the doors are always locked")
+                print(red + "Game Over" + reset)
+                break
+    if fD == "right":
+        world["loc"] = "Closet"
+        if "B.F.G" not in world["inv"]:
+            print("You enter the janitor's closet and find a gun labeled the B.F.G\nYou pick it up")
+            world["inv"].append("B.F.G")
+        else:
+            print("It's just a Janitor's Closet. However, there is an awfully strange dent in the floor.")
+            world["loc"] = "library"
+    continue
     break
-print(world["inv"])
-
