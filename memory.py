@@ -1,8 +1,9 @@
+from characterStuff import world
 def readMem():
     f = open("worldMemory.txt", "r")
     fcon = f.read()
     fline = fcon.split("\n")
-    memWorld = {
+    worldmem = {
         "name" : "string",
         "loc" : "string",
         "max hp" : 0,
@@ -12,19 +13,34 @@ def readMem():
         "damage" : 0,
         "inv" : []
         }
-    memWorld["name"] = fline[0]
-    memWorld["loc"] = fline[1]
-    memWorld["max hp"] = int(fline[2])
-    memWorld["hp"] = int(fline[3])
-    memWorld["accuracy"] = int(fline[4])
-    memWorld["dexterity"] = int(fline[5])
-    memWorld["damage"] = int(fline[6])
-    memWorld["inv"] = memWorld["inv"].append(fline[7])
+    worldmem["name"] = fline[0]
+    worldmem["loc"] = fline[1]
+    worldmem["max hp"] = int(fline[2])
+    worldmem["hp"] = int(fline[3])
+    worldmem["accuracy"] = int(fline[4])
+    worldmem["dexterity"] = int(fline[5])
+    worldmem["damage"] = int(fline[6])
+    worldmem["inv"].append(fline[7])
     f.close()
-    return memWorld
-                
-print(readMem())
+    return worldmem
 
 def writeMem():
+    f = open("worldMemory.txt", "r")
+    fcon = f.read()
+    fline = fcon.split("\n")
+    f.close
     f = open("worldMemory.txt", "w")
-    f.write()
+    l = [world["name"]+"\n", world["loc"]+"\n", world["max hp"]+"\n", \
+    world["hp"]+"\n", world["accuracy"]+"\n", world["dexterity"]+"\n", \
+    world["damage"]+"\n", world["inv"]+"\n"]
+    for line in range (len(l)):
+        f.writelines(l[line])
+    f.close
+
+def createWorld(worldmem):
+    world = {}
+    world["name"] = worldmem["name"]
+
+print(readMem())
+print("---------------------------------")
+print(writeMem())

@@ -1,4 +1,5 @@
 from diceRoller import *
+from memory import *
 def accuracy(stringRoll):
     accRoll = dndRoll(stringRoll)
     accRoll.sort()
@@ -12,5 +13,4 @@ def dexterity(stringRoll):
     dexRoll = sum(dexRoll)
     return dexRoll
 
-print(accuracy("4d6"))
-print(dexterity("4d6"))
+print(readMem())

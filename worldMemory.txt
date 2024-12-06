@@ -5,3 +5,4 @@ library
 0
 0
 0
+Inventory
