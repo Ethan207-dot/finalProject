@@ -1,8 +1,9 @@
-Player
-library
+Ethan
+graveyard
 100
 100
+16
+10
 0
-0
-0
-Inventory
+B.F.G
+peice of gum
