@@ -2,7 +2,7 @@ Ethan
 graveyard
 100
 100
-16
+9
 10
 0
 B.F.G
