@@ -1,8 +1,9 @@
-player
-library
+Ethan
+lose
 100
 100
+10
+18
 0
-0
-0
+B.F.G
 peice of gum

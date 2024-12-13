@@ -33,6 +33,8 @@ def writeMem(world):
     fline = fcon.split("\n")
     f.close()
     f = open("worldMemory.txt", "w")
+    while "" in fline:
+        fline.remove("")
     l = [world["name"]+"\n", world["loc"]+"\n", str(world["max hp"])+"\n", \
     str(world["hp"])+"\n",str(world["accuracy"])+"\n", str(world["dexterity"])+"\n", \
     str(world["damage"])+ "\n"]
