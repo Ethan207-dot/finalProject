@@ -28,10 +28,10 @@ def main():
             entrance(world)
             continue
         if world["loc"] == "win":
-            if world["hp"] == 100:
+            if world["hp"] == 100 or "B.F.G" in world["inv"]:
                 print(f"\nCongratulations you have stopped the zombie apocalypse. {color("green", "You Win")}\n")
-            else:
-                print("You have survived the starting and the ending of a zombie apocalypse")
+            if world["hp"] < 100 and "B.F.G" not in world["inv"]:
+                print(f"You have survived the starting and the ending of a zombie apocalypse {color("green", "You Win")}")
             break
         if world["loc"] == "lose":
             print(color("red", "Game Over"))

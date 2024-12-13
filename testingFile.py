@@ -12,7 +12,6 @@ def library(world):
         print("\nYou see the front door cracked a bit\n")
         fD = input("\nYou are in the Library that you work at\n\nEverything is dusty and there are only three bookshelves\nYou notice 3 doors 1 to your left, right, and the entrance\n\nWhich door would you like to go through\n")
         fD = fD.lower().strip()
-        print(fD)
     if fD == "right":
         world["loc"] = "closet"
     elif fD == "left":
@@ -60,6 +59,9 @@ def graveyard(world):
                 world["damage"] += sum(dndRoll("2d6"))+1
                 world["loc"] = "library"
                 return
+            else: 
+                print("You escaped to the library")
+                world["loc"] = "library"
         if fD == "no":
             print("\nYou wait as you see the zombies rise from the ground and eat you\n")
             world["loc"] = "lose"
