@@ -1,3 +1,7 @@
+#This file contains any functions that are related to the function of the memory
+
+# This function reads from a file processes the information and turns the information into the world dictionary and returns the world 
+#dictionairy for use
 def readMem():
     f = open("worldMemory.txt", "r")
     fcon = f.read()
@@ -26,7 +30,7 @@ def readMem():
         pass
     f.close()
     return worldmem
-
+# This function takes the current state of the world and writes it to the same file that is read to make the dictionary and returns nothing
 def writeMem(world):
     f = open("worldMemory.txt", "r")
     fcon = f.read()

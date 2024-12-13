@@ -2,9 +2,12 @@ from colors import *
 from diceRoller import *
 from characterStuff import *
 from testingFile import *
+# This file has the main in it and in the main function every location function along with functions that end the game by telling the 
+# player if they win or lose and break
+
+# Runs the game is given nothing and does not return anything
 def main():
     world = readMem()
-    win = ""
     while True:
         try:
             writeMem(world)

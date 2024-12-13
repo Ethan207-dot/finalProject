@@ -1,5 +1,9 @@
 from diceRoller import *
 from memory import *
+# This file has all the location functions used in the main function
+
+# Holds every action the player can make in the library and all the content in the library like descriptions of the library 
+# that take place in the library it takes the world dictionary and returns nothing
 def library(world):
     if world["hp"] == 100:
         fD = input("You are in the Library that you work at\n\nEverything is dusty and there are only three bookshelves\nYou notice 2 doors 1 to your left and right\n\nWhich door would you like to go through\n")
@@ -20,7 +24,8 @@ def library(world):
     else:
         print("\nYour only options are left, right, and the entrance pick one\n")
     return
-
+# Holds every action the player can make in the graveyard and all the content related to the location of the graveyard 
+# that occurs in the graveyardit takes the world and returns nothing
 def graveyard(world):
     print("You see a rumbling from the ground")
     if "B.F.G" in world["inv"]:
@@ -59,7 +64,8 @@ def graveyard(world):
             print("\nYou wait as you see the zombies rise from the ground and eat you\n")
             world["loc"] = "lose"
             return
-
+#Holds every the player can make in the closet along with all the content related to the location of the closet that 
+# happens in the closet. it takes the world and returns nothing
 def closet(world):
     while True:
         if "B.F.G" not in world["inv"]:
@@ -90,7 +96,8 @@ def closet(world):
             print("\nIt's just a Janitor's Closet. However, there is an awfully strange dent in the floor.\n")
             world["loc"] = "library"
             return
-
+#Holds every the player can make in the entrance along with all the content related to the location of the entrance that takes place in 
+# the entrance it takes the world and returns nothing
 def entrance(world):
     fD = input("You see the army has arrrived as you go out the entrance\nA person who introduces himself as Major Lieutenant tells you to get behind cover\nWould you like to go behind cover?\n")
     fD = fD.lower().strip()

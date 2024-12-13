@@ -1,3 +1,6 @@
+#This file contains the function required to color certain strings like "You win" and "Game Over"
+
+#This function takes a string and a color modifies it to be the color and returns the string
 def color(aColor, aString):
     esc = "\033["
     red = esc+"1;31m"
