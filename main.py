@@ -21,6 +21,9 @@ def main():
         if world["loc"] == "closet":
             closet(world)
             continue
+        if world["loc"] == "entrance":
+            entrance(world)
+            continue
         if world["loc"] == "win":
             if world["hp"] == 100:
                 print(f"\nCongratulations you have stopped the zombie apocalypse. {color("green", "You Win")}\n")

@@ -81,7 +81,8 @@ def closet(world):
                     return
                 if fD == "yes":
                     print("You Leave")
-                    world["loc"] == "library"
+                    world["loc"] = "library"
+                    print(world["loc"])
                     return
                 if fD == "no":
                     continue
@@ -91,6 +92,24 @@ def closet(world):
             return
 
 def entrance(world):
-    print("You see the army has arrrived as you go out the entrance\nA person who introduces himself as Major Lieutenant tells you to get behind cover\nAs you get behind cover you hear an explosion\n By the time you look up the library is gone along eith the graveyard")
-    world["loc"] = "win"
-    return
+    fD = input("You see the army has arrrived as you go out the entrance\nA person who introduces himself as Major Lieutenant tells you to get behind cover\nWould you like to go behind cover?\n")
+    fD = fD.lower().strip()
+    if fD != "yes" and fD != "no":
+        print("It's either yes or no")
+        return
+    if fD == "yes":
+        world["loc"] = "win"
+        return
+    if fD == "no":
+        fD = input("Would you like to reason with the army to save the building?\n")
+        fD = fD.lower().strip()
+        if fD != "yes" and fD != "no":
+            print("It's either yes or no")
+            return
+        if fD == "yes":
+            print("The army instead rushes the building and shoots the zombies\n")
+            world["loc"] = "win"
+        if fD == "no":
+            print("\nThe army blows the library sky high with you in front of it\n")
+            world["loc"] = "lose"
+        return
