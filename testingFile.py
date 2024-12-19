@@ -26,12 +26,12 @@ def library(world):
 # Holds every action the player can make in the graveyard and all the content related to the location of the graveyard 
 # that occurs in the graveyardit takes the world and returns nothing
 def graveyard(world):
-    print("You see a rumbling from the ground")
+    print("\nYou see a rumbling from the ground\n")
     if "B.F.G" in world["inv"]:
         fD = input("\nWould you like to shoot?\n")
         fD = fD.lower().strip()
         if fD != "yes" and fD != "no":
-            print("It's either yes or no")
+            print("\nIt's either yes or no\n")
             return
         if fD == "yes":
             print("\nYou shoot the ground until it is no longer recognizable as a Graveyard\n")
@@ -43,7 +43,7 @@ def graveyard(world):
         fD = input("\nWould you like to run?\n")
         fD = fD.lower().strip()
         if fD != "yes" and fD != "no":
-            print("It's either yes or no")
+            print("\nIt's either yes or no\n")
             return        
         if fD == "yes":
             dexRoll = sum(dndRoll("1d20"))
@@ -60,7 +60,7 @@ def graveyard(world):
                 world["loc"] = "library"
                 return
             else: 
-                print("You escaped to the library")
+                print("\nYou escaped to the library\n")
                 world["loc"] = "library"
         if fD == "no":
             print("\nYou wait as you see the zombies rise from the ground and eat you\n")
@@ -74,10 +74,10 @@ def closet(world):
             fD = input("\nYou enter the janitor's closet and find a gun labeled the B.F.G.\nWould you like to pick it up?\n")
             fD = fD.lower().strip()
             if fD != "yes" and fD != "no":
-                print("It's either yes or no")
+                print("\nIt's either yes or no\n")
                 return
             if fD == "yes":
-                print("You pick it up")
+                print("\nYou pick it up\n")
                 world["inv"].insert(0,"B.F.G")
                 world["loc"] = "library"
                 return
@@ -85,10 +85,10 @@ def closet(world):
                 fD = input("\nWould you like to leave the closet?\n")
                 fD = fD.lower().strip()
                 if fD != "yes" and fD != "no":
-                    print("It's either yes or no")
+                    print("\nIt's either yes or no\n")
                     return
                 if fD == "yes":
-                    print("You Leave")
+                    print("\nYou Leave\n")
                     world["loc"] = "library"
                     print(world["loc"])
                     return
@@ -104,19 +104,19 @@ def entrance(world):
     fD = input("You see the army has arrrived as you go out the entrance\nA person who introduces himself as Major Lieutenant tells you to get behind cover\nWould you like to go behind cover?\n")
     fD = fD.lower().strip()
     if fD != "yes" and fD != "no":
-        print("It's either yes or no")
+        print("\nIt's either yes or no\n")
         return
     if fD == "yes":
         world["loc"] = "win"
         return
     if fD == "no":
-        fD = input("Would you like to reason with the army to save the building?\n")
+        fD = input("\nWould you like to reason with the army to save the building?\n")
         fD = fD.lower().strip()
         if fD != "yes" and fD != "no":
-            print("It's either yes or no")
+            print("\nIt's either yes or no\n")
             return
         if fD == "yes":
-            print("The army instead rushes the building and shoots the zombies\n")
+            print("\nThe army instead rushes the building and shoots the zombies\n")
             world["loc"] = "win"
         if fD == "no":
             print("\nThe army blows the library sky high with you in front of it\n")
